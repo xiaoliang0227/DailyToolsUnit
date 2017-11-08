@@ -2,6 +2,11 @@
 
 日常开发中用到的工具类集合，希望大家添加或改进
 
+###### gradle引用方法
+~~~
+compile "com.github.xiaoliang0227:DailyToolsUnit:1.0.1"
+~~~
+
 ###### 工具类的使用说明文档如下
 [使用文档](https://xiaoliang0227.github.io/Documents/DailyToolsUnit/index.html)
 
