@@ -1,9 +1,76 @@
-apply plugin: 'com.android.application'
+//apply plugin: 'com.android.application'
+
+apply plugin: 'com.android.library'
+
+apply plugin: 'maven'
+// 使用signing plugin做数字签名
+apply plugin: 'signing'
+//定义GroupID和Version，ArtifactID会自动使用Project名
+group = 'com.github.xiaoliang0227'
+archivesBaseName = "DailyToolsUnit"
+version = '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            // 为Pom文件做数字签名
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment)
+            }
+
+            // 指定项目部署到的中央库地址
+            repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
+                authentication(userName:ossrhUsername, password:ossrhPassword)
+            }
+            snapshotRepository(url:'https://oss.sonatype.org/content/repositories/snapshots/') {
+                authentication(userName:ossrhUsername, password:ossrhPassword)
+            }
+
+            // 构造项目的pom文件
+            pom.project {
+                name project.name
+                packaging 'aar'
+                description '日常开发中用到的工具类集合'
+                url 'https://github.com/xiaoliang0227/DailyToolsUnit'
+
+                scm {
+                    url 'scm:git@github.com:xiaoliang0227/DailyToolsUnit.git'
+                    connection 'scm:git@github.com:xiaoliang0227/DailyToolsUnit.git'
+                    developerConnection 'git@github.com:xiaoliang0227/DailyToolsUnit.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'Jason Zhao（赵永亮）'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'yongliang'
+                        name 'Jason Zhao（赵永亮）'
+                        email '503518700@qq.com'
+                    }
+                }
+            }
+        }
+    }
+}
 
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.zyl.tools.dailytoolsunit"
+//        applicationId "com.zyl.tools.dailytoolsunit"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
