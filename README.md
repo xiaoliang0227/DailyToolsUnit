@@ -21,6 +21,7 @@ compile "com.github.xiaoliang0227:DailyToolsUnit:1.0.3"
 - **StringTools** 字符串处理操作
 - **TimeTools** 时间处理操作
 - **ViewTools** 常见视图处理操作
+- **InternetTools** 常见网络处理操作
 
 ***
 ###### 工具类的使用说明文档如下
@@ -34,6 +35,7 @@ compile "com.github.xiaoliang0227:DailyToolsUnit:1.0.3"
 - [StringTools使用说明文档](https://xiaoliang0227.github.io/Documents/DailyToolsUnit/com/zyl/tools/dailytoolsunit/tool/StringTools.html)
 - [TimeTools使用说明文档](https://xiaoliang0227.github.io/Documents/DailyToolsUnit/com/zyl/tools/dailytoolsunit/tool/TimeTools.html)
 - [ViewTools使用说明文档](https://xiaoliang0227.github.io/Documents/DailyToolsUnit/com/zyl/tools/dailytoolsunit/tool/ViewTools.html)
+- [InternetTools使用说明文档](https://xiaoliang0227.github.io/Documents/DailyToolsUnit/com/zyl/tools/dailytoolsunit/tool/InternetTools.html)
 
 ***
 ###### 工具类采用单例模式，各个工具的调用方式如下
@@ -49,4 +51,5 @@ PermissionTools.getInstance().xxxooo
 StringTools.getInstance().xxxooo
 TimeTools.getInstance().xxxooo
 ViewTools.getInstance().xxxooo
+InternetTools.getInstance().xxxooo
 ~~~
