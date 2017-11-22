@@ -13,4 +13,12 @@ public class ToolsUnitCommonConsts {
     public static final int DEFAULT_TIMEOUT_CONNECTION = 30000;
 
     public static final int DEFAULT_TIMEOUT_SOCKET = 30000;
+
+    public static final String DEFAULT_CHARSET = "UTF-8";
+
+    public static final String REQUEST_METHOD_GET = "GET";
+
+    public static final String REQUEST_METHOD_POST = "POST";
+
+    public static final String DEFAULT_GATEWAY = "192.168.18.1";
 }

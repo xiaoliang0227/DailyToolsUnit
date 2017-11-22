@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="com.github.xiaoliang0227" module="app" revision="1.0.2" status="integration" default="true" publication="20171108183902"/>
+  <info organisation="com.github.xiaoliang0227" module="app" revision="1.0.3" status="integration" default="true" publication="20171122142743"/>
   <configurations>
     <conf name="androidJacocoAgent" visibility="private"/>
     <conf name="androidJacocoAnt" visibility="private"/>
@@ -114,6 +114,7 @@
     <dependency org="com.android.support.test.espresso" name="espresso-core" rev="3.0.1" conf="androidTestImplementation-&gt;default"/>
     <dependency org="com.readystatesoftware.systembartint" name="systembartint" rev="1.0.3" conf="compile-&gt;default"/>
     <dependency org="org.litepal.android" name="core" rev="1.6.0" conf="compile-&gt;default"/>
+    <dependency org="com.google.code.gson" name="gson" rev="2.8.1" conf="compile-&gt;default"/>
     <dependency org="com.android.support" name="appcompat-v7" rev="26.1.0" conf="implementation-&gt;default"/>
     <dependency org="com.android.support.constraint" name="constraint-layout" rev="1.0.2" conf="implementation-&gt;default"/>
     <dependency org="junit" name="junit" rev="4.12" conf="testImplementation-&gt;default"/>

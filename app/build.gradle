@@ -8,7 +8,7 @@ apply plugin: 'signing'
 //定义GroupID和Version，ArtifactID会自动使用Project名
 group = 'com.github.xiaoliang0227'
 archivesBaseName = "DailyToolsUnit"
-version = '1.0.2'
+version = '1.0.3'
 
 repositories {
     mavenCentral()
@@ -95,4 +95,5 @@ dependencies {
 
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'org.litepal.android:core:1.6.0'
+    compile 'com.google.code.gson:gson:2.8.1'
 }
