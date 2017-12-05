@@ -41,13 +41,16 @@ import java.util.Locale;
 
 public class FileTools implements IFileTools {
 
-    private static FileTools instance;
+    private FileTools() {
+
+    }
 
     public static FileTools getInstance() {
-        if (null == instance) {
-            instance = new FileTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private static class SingletonHolder {
+        private static final FileTools instance = new FileTools();
     }
 
     /**

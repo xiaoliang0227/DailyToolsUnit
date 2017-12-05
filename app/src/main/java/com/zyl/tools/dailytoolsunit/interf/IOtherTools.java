@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 
+import java.io.Closeable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
@@ -269,5 +270,12 @@ public interface IOtherTools {
      * @param aesKey
      */
     void encryptAllStringValues(Context context, String root, String aesKey);
+
+    /**
+     * 关闭IO
+     *
+     * @param closeable
+     */
+    void closeIO(Closeable closeable);
 
 }

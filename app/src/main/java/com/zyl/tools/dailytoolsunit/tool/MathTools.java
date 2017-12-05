@@ -17,13 +17,16 @@ public class MathTools implements IMathTools {
 
     private static final String TAG = "MathTools";
 
-    private static MathTools instance;
+    private MathTools() {
+
+    }
+
+    private static class SingletonHolder {
+        private static final MathTools instance = new MathTools();
+    }
 
     public static MathTools getInstance() {
-        if (null == instance) {
-            instance = new MathTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
     }
 
     /**

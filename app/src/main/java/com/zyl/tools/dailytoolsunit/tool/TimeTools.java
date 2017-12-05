@@ -11,13 +11,16 @@ import java.util.Date;
 
 public class TimeTools implements ITimeTools {
 
-    private static TimeTools instance;
-
     public static TimeTools getInstance() {
-        if (null == instance) {
-            instance = new TimeTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private TimeTools() {
+
+    }
+
+    private static class SingletonHolder {
+        private static final TimeTools instance = new TimeTools();
     }
 
     /**

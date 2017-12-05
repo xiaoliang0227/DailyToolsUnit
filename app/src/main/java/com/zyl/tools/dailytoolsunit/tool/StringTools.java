@@ -24,13 +24,16 @@ public class StringTools implements IStringTools {
 
     private static final String TAG = "StringTools";
 
-    private static StringTools instance;
-
     public static StringTools getInstance() {
-        if (null == instance) {
-            instance = new StringTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private StringTools() {
+
+    }
+
+    private static class SingletonHolder {
+        private final static StringTools instance = new StringTools();
     }
 
     /**

@@ -27,6 +27,18 @@ public class MediaTools implements IMediaTools {
 
     private static final String TAG = "MediaTools";
 
+    private MediaTools() {
+
+    }
+
+    public static MediaTools getInstance() {
+        return SingletonHolder.instance;
+    }
+
+    private static class SingletonHolder {
+        private static final MediaTools instance = new MediaTools();
+    }
+
 
     @Override
     public String[] getImageResourceCursorColumns() {

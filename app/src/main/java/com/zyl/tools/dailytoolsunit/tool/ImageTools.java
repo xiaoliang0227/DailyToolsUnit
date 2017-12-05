@@ -29,13 +29,16 @@ import java.util.Random;
 
 public class ImageTools implements IImageTools {
 
-    private static ImageTools instance;
+    private ImageTools() {
+
+    }
 
     public static ImageTools getInstance() {
-        if (null == instance) {
-            instance = new ImageTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private static class SingletonHolder {
+        private static final ImageTools instance = new ImageTools();
     }
 
     /**

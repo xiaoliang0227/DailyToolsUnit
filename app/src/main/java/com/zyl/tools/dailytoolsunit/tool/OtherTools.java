@@ -22,7 +22,9 @@ import com.zyl.tools.dailytoolsunit.interf.IOtherTools;
 import com.zyl.tools.dailytoolsunit.util.SecurityUtil;
 
 import java.io.ByteArrayInputStream;
+import java.io.Closeable;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -49,13 +51,16 @@ import java.util.Timer;
 
 public class OtherTools implements IOtherTools {
 
-    private static OtherTools instance;
+    private OtherTools() {
+
+    }
 
     public static OtherTools getInstance() {
-        if (null == instance) {
-            instance = new OtherTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private static class SingletonHolder {
+        private static final OtherTools instance = new OtherTools();
     }
 
     /**
@@ -664,6 +669,22 @@ public class OtherTools implements IOtherTools {
             }
         } catch (Exception e) {
 
+        }
+    }
+
+    /**
+     * 关闭IO
+     *
+     * @param closeable
+     */
+    @Override
+    public void closeIO(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

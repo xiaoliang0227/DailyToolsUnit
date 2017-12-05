@@ -48,13 +48,16 @@ public class InternetTools implements IInternetTools {
 
     private static final String TAG = "InternetTools";
 
-    private static InternetTools instance;
+    private InternetTools() {
+
+    }
+
+    private static class SingletonHolder {
+        private static final InternetTools instance = new InternetTools();
+    }
 
     public static InternetTools getInstance() {
-        if (null == instance) {
-            instance = new InternetTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
     }
 
     /**

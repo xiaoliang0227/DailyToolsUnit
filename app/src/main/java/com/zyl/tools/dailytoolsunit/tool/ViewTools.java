@@ -44,13 +44,16 @@ import java.io.Writer;
 
 public class ViewTools implements IViewTools {
 
-    private static ViewTools instance;
-
     public static ViewTools getInstance() {
-        if (null == instance) {
-            instance = new ViewTools();
-        }
-        return instance;
+        return SingleHolder.instance;
+    }
+
+    private ViewTools() {
+
+    }
+
+    private static class SingleHolder {
+        private static final ViewTools instance = new ViewTools();
     }
 
     /**

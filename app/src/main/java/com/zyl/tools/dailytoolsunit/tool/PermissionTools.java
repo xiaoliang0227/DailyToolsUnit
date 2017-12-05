@@ -17,13 +17,16 @@ import com.zyl.tools.dailytoolsunit.interf.IPermissionTools;
 
 public class PermissionTools implements IPermissionTools {
 
-    private static PermissionTools instance;
-
     public static PermissionTools getInstance() {
-        if (null == instance) {
-            instance = new PermissionTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private PermissionTools() {
+
+    }
+
+    private static class SingletonHolder {
+        private static final PermissionTools instance = new PermissionTools();
     }
 
     /**

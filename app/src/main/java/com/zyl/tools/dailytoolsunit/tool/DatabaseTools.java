@@ -16,13 +16,16 @@ import java.util.List;
 
 public class DatabaseTools implements IDatabaseTools {
 
-    private static DatabaseTools instance;
+    private DatabaseTools() {
+
+    }
 
     public static DatabaseTools getInstance() {
-        if (null == instance) {
-            instance = new DatabaseTools();
-        }
-        return instance;
+        return SingletonHolder.instance;
+    }
+
+    private static class SingletonHolder {
+        private static final DatabaseTools instance = new DatabaseTools();
     }
 
     /**
