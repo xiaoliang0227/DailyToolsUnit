@@ -268,9 +268,7 @@ public class InternetTools implements IInternetTools {
         ToolsUnitLogUtil.debug(TAG, "post dataStr:" + dataStr);
         if (!TextUtils.isEmpty(dataStr)) {
             byte[] data = dataStr.getBytes();
-            // 设置请求体的类型是文本类型
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            connection.setRequestProperty("Content-Type", "application/json");
+            setContentType(connection, type);
             // 设置请求体的长度
             connection.setRequestProperty("Content-Length", String.valueOf(data.length));
 
@@ -291,6 +289,18 @@ public class InternetTools implements IInternetTools {
         }
         ToolsUnitLogUtil.debug(TAG, "request post response:" + responseData);
         return responseData;
+    }
+
+    private void setContentType(HttpURLConnection connection, HttpPostType type) {
+        switch (type) {
+            case JSON:
+                connection.setRequestProperty("Content-Type", "application/json");
+                break;
+            case NORMAL:
+            default:
+                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                break;
+        }
     }
 
     private String formatParams(Map<String, Object> params, HttpPostType type) throws UnsupportedEncodingException {

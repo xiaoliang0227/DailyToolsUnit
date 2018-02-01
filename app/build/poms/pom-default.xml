@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.xiaoliang0227</groupId>
   <artifactId>DailyToolsUnit</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <packaging>aar</packaging>
   <name>app</name>
   <description>日常开发中用到的工具类集合</description>
