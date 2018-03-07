@@ -200,4 +200,20 @@ public interface IStringTools {
      * @return
      */
     String distanceFormater(int distance);
+
+    /**
+     * 校验是否为合法的身份证号
+     *
+     * @param cardNo
+     * @return
+     */
+    boolean checkIdCard(String cardNo);
+
+    /**
+     * 校验是否为合法的邮箱地址
+     *
+     * @param email
+     * @return
+     */
+    boolean checkEmail(String email);
 }

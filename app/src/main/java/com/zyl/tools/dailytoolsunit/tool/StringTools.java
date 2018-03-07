@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.zyl.tools.dailytoolsunit.enumeration.SecurityLevel;
 import com.zyl.tools.dailytoolsunit.interf.IStringTools;
+import com.zyl.tools.dailytoolsunit.util.IdCardUtil;
 import com.zyl.tools.dailytoolsunit.util.ToolsUnitLogUtil;
 
 import java.io.UnsupportedEncodingException;
@@ -513,5 +514,36 @@ public class StringTools implements IStringTools {
         }
         ToolsUnitLogUtil.debug(TAG, String.format("distance:%d,tmp:%s", distance, tmp));
         return tmp;
+    }
+
+    /**
+     * 校验是否为合法的身份证号
+     *
+     * @param cardNo
+     * @return
+     */
+    @Override
+    public boolean checkIdCard(String cardNo) {
+        return IdCardUtil.isIdcard(cardNo);
+    }
+
+    /**
+     * 校验是否为合法的邮箱地址
+     *
+     * @param email
+     * @return
+     */
+    @Override
+    public boolean checkEmail(String email) {
+        return email.matches("[a-zA-Z0-9_]+@[a-zA-Z0-9_]+(\\.[a-zA-Z0-9_]+)+");
+    }
+
+    public static void main(String[] args) {
+        String idcard = "130706197909174393";
+        String emailAddress = "443000038@qq.com";
+        String mobile = "13816303587";
+        System.out.println("is idcard:" + StringTools.getInstance().checkIdCard(idcard));
+        System.out.println("is email address:" + StringTools.getInstance().checkEmail(emailAddress));
+        System.out.println("is mobile:" + StringTools.getInstance().isMobileNO(mobile));
     }
 }
