@@ -134,10 +134,22 @@ public class MathTools implements IMathTools {
         return Double.parseDouble(format.format(tmp));
     }
 
+    /**
+     * 按格式格式化数值
+     *
+     * @param value
+     * @param pattern
+     * @return
+     */
+    @Override
+    public String floatRound(double value, String pattern) {
+        DecimalFormat fnum = new DecimalFormat(pattern);
+        return fnum.format(value);
+    }
+
     @Override
     public String floatRound2(double value) {
-        DecimalFormat fnum = new DecimalFormat("##0.00");
-        return fnum.format(value);
+        return floatRound(value, "##0.00");
     }
 
     @Override

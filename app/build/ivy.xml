@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
-  <info organisation="com.github.xiaoliang0227" module="app" revision="1.0.5" status="integration" default="true" publication="20180201102719"/>
+  <info organisation="com.github.xiaoliang0227" module="app" revision="1.0.7" status="integration" default="true" publication="20180329141325"/>
   <configurations>
     <conf name="androidJacocoAgent" visibility="private"/>
     <conf name="androidJacocoAnt" visibility="private"/>

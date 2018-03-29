@@ -183,7 +183,7 @@ public class StringTools implements IStringTools {
      */
     @Override
     public boolean isMobileNO(String mobile) {
-        Pattern p = Pattern.compile("^[1][34578][0-9]{9}$");
+        Pattern p = Pattern.compile("^[1][3456789][0-9]{9}$");
         Matcher m = p.matcher(mobile);
         return m.matches();
     }

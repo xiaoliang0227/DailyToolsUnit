@@ -52,6 +52,15 @@ public interface IMathTools {
      */
     double MbitToByteWithPattern(double Mbit, String pattern);
 
+    /**
+     * 按格式格式化数值
+     *
+     * @param value
+     * @param pattern
+     * @return
+     */
+    String floatRound(double value, String pattern);
+
     String floatRound2(double value);
 
     double formatDoubleWithPattern(double original, String pattern);

@@ -292,4 +292,11 @@ public interface IViewTools {
      */
 
     void dismissDialog(final Dialog dialog);
+
+    /**
+     * 隐藏虚拟按键，并且全屏
+     *
+     * @param act
+     */
+    void hideBottomUIMenu(Activity act);
 }
