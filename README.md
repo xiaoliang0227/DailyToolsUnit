@@ -4,7 +4,7 @@
 
 ###### gradle引用方法
 ~~~
-compile "com.github.xiaoliang0227:DailyToolsUnit:1.0.6"
+compile "com.github.xiaoliang0227:DailyToolsUnit:1.0.7"
 ~~~
 
 ###### 工具类的使用说明文档如下
